@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Database-Consumer" />
+    <file type="web" url="file://$PROJECT_DIR$/Notify-Consumer" />
+    <file type="web" url="file://$PROJECT_DIR$/Order-Producer" />
+    <file type="web" url="file://$PROJECT_DIR$/Payment-Consumer" />
+    <file type="web" url="file://$PROJECT_DIR$/Stock-Consumer" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK" />
+</project>

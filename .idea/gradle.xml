@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Database-Consumer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Database-Consumer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Notify-Consumer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Notify-Consumer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Notify-Consumer/Database-Consumer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Notify-Consumer/Database-Consumer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Order-Producer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Order-Producer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Payment-Consumer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Payment-Consumer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Stock-Consumer" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Stock-Consumer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
