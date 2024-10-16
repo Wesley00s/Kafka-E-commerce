@@ -20,14 +20,6 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Notify-Consumer/Database-Consumer" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/Notify-Consumer/Database-Consumer" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Order-Producer" />
         <option name="modules">
           <set>
