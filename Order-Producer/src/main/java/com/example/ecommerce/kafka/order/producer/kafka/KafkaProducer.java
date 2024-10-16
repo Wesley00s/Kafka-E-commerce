@@ -11,7 +11,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class KafkaProducer {
     private static final String TOPIC = "orders";
     private final KafkaTemplate<String, String> kafkaTemplate;
-    private final AtomicInteger partitionCounter = new AtomicInteger(0);
 
     public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
