@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
     private final ObjectMapper objectMapper;
+    private Order orderNotification;
 
     public KafkaConsumer(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
@@ -22,13 +23,21 @@ public class KafkaConsumer {
             groupId = "ecommerce-group")
     public void consume(String orderJson) {
         try {
-            System.out.println("Processando notificação do pedido...");
-            Order order = objectMapper.readValue(orderJson, Order.class);
-
-            System.out.println("Sua compra no valor de R$" + order.getTotalAmount() + " do produto " + order.getProductName()
-            + "foi realizada com sucesso!");
+            orderNotification = objectMapper.readValue(orderJson, Order.class);
         } catch (Exception e) {
-            System.out.println("Erro ao processar o pedido: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
+    }
+
+    public String getNotification() {
+        if (orderNotification == null) {
+            return "<h3 style='color:red;'>Nenhuma notificação de pedido disponível no momento.</h3>";
+        }
+        return "<div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
+                "<h2 style='color: #4CAF50;'>Compra Realizada com Sucesso!</h2>" +
+                "<p><strong>Produto:</strong> " + orderNotification.getProductName() + "</p>" +
+                "<p><strong>Valor Total:</strong> R$" + orderNotification.getTotalAmount() + "</p>" +
+                "<p>Obrigado por comprar conosco!</p>" +
+                "</div>";
     }
 }

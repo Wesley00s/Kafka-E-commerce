@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
     private final ObjectMapper objectMapper;
+    private Order orderNotification;
 
     public KafkaConsumer(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
@@ -22,12 +23,27 @@ public class KafkaConsumer {
             groupId = "ecommerce-group")
     public void consume(String orderJson) {
         try {
-            System.out.println("Processando pagamento para o pedido...");
-            Order order = objectMapper.readValue(orderJson, Order.class);
-
-            System.out.println("Estoque atualizado pra o produto: " + order.getProductName());
+            orderNotification = objectMapper.readValue(orderJson, Order.class);
         } catch (Exception e) {
-            System.out.println("Erro ao processar o pedido: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
+    }
+
+    public String getStockNotification() {
+        int quantityProductStock = 50;
+        if (orderNotification == null) {
+            return "<div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
+                    "<h2 style='color: #4CAF50;'>Estoque</h2>" +
+                    "<p><strong>Produto:</strong> Laptop</p>" +
+                    "<p><strong>Quantidade:</strong> " + quantityProductStock + "</p>" +
+                    "</div>";
+        }
+
+        return "<div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
+                "<h2 style='color: #4CAF50;'>Estoque Atualizado!</h2>" +
+                "<p><strong>Produto:</strong> " + orderNotification.getProductName() + "</p>" +
+                "<p><strong>Quantidade atualizada:</strong> " + (quantityProductStock - orderNotification.getQuantity()) + "</p>" +
+                "<p>O estoque foi atualizado com sucesso!</p>" +
+                "</div>";
     }
 }
