@@ -31,9 +31,9 @@ public class KafkaConsumer {
 
     public String getNotification() {
         if (orderNotification == null) {
-            return "<h3 style='color:red;'>Nenhuma notificação de pedido disponível no momento.</h3>";
+            return "<h1>Notify Consumer</h1><h3 style='color:red;'>Nenhuma notificação de pedido disponível no momento.</h3>";
         }
-        return "<div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
+        return "<h1>Notify Consumer</h1><div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
                 "<h2 style='color: #4CAF50;'>Compra Realizada com Sucesso!</h2>" +
                 "<p><strong>Produto:</strong> " + orderNotification.getProductName() + "</p>" +
                 "<p><strong>Valor Total:</strong> R$" + orderNotification.getTotalAmount() + "</p>" +

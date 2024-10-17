@@ -32,14 +32,14 @@ public class KafkaConsumer {
     public String getStockNotification() {
         int quantityProductStock = 50;
         if (orderNotification == null) {
-            return "<div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
+            return "<h1>Stock Consumer</h1><div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
                     "<h2 style='color: #4CAF50;'>Estoque</h2>" +
                     "<p><strong>Produto:</strong> Laptop</p>" +
                     "<p><strong>Quantidade:</strong> " + quantityProductStock + "</p>" +
                     "</div>";
         }
 
-        return "<div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
+        return "<h1>Stock Consumer</h1><div style='font-family: Arial, sans-serif; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; max-width: 400px;'>" +
                 "<h2 style='color: #4CAF50;'>Estoque Atualizado!</h2>" +
                 "<p><strong>Produto:</strong> " + orderNotification.getProductName() + "</p>" +
                 "<p><strong>Quantidade atualizada:</strong> " + (quantityProductStock - orderNotification.getQuantity()) + "</p>" +
